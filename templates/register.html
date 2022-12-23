@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<script src="static/scripts/register.js"></script>{% endblock %}
+
+<h1>{% block title %}Register{% endblock %}</h1>
+
+
+{% block content %}
+
+<fieldset>
+    <form name="Class_atividade" method="POST" action="/register" onsubmit="return ValidateForm();">
+        <h2>Inquerito sobre a atividade</h2>
+        <tr>
+            <div class="nprocesso">
+                <label for="nprocesso">Nº processo</label>
+                <input type="text"id="nprocesso" name="nprocesso"><br>
+            </div>
+            <div class="nome">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome"><br>
+            </div>
+            <div class="turma">
+                <label for="turma">Turma:</label>
+                <input type="text" id="turma" name="turma"><br>
+            </div>
+            <div class="ano">
+                <label for="ano">Ano:</label>   
+                <input type="text" id="ano" name="ano"><br>
+            </div>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="pergunta">
+                Achou a atividade interessante?<span id="asterisco">*</span><br></div>
+                <input type="radio" id="sim" name="interesse" required value="Sim"><label for="sim">Sim </label><br>
+                <input type="radio" id="nao" name="interesse" required value="Não"><label for="nao">Não </label><br>
+            </td>
+        </tr>
+        <div class="pergunta">
+            Classifique a atividade de 0-10.<span id="asterisco">*</span><br></div>
+        <input type="radio"  id="0-5" name="classificacao" required value="0-5"><label for="0-5">0-5 </label><br>
+        <input type="radio" id="6-8" name="classificacao" required value="6-8"><label for="6-8">6-8 </label><br>
+        <input type="radio" id="9-10" name="classificacao" required value="9-10"><label for="9-10">9-10 </label><br>
+    </td>
+        <tr>
+            <div class="pergunta">
+            <td> <label for="opiniao">O que achou mais interessante sobre a atividade?</label></td><br></div>
+            <td><textarea name="opiniao" rows="4" cols="50"></textarea></td><br>
+        </tr>
+        <tr>
+            <td colspan="2" class="botoes_acao">
+                <input type="submit" id="submeter" value="Submeter" class="bt_submeter">
+                <input type="reset" id="limpar" value="Limpar">
+            </td>
+        </tr>
+    </form>
+</fieldset>
+{% endblock %}
